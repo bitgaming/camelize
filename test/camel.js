@@ -22,10 +22,11 @@ test('camelize a nested object', function (t) {
 });
 
 test('string', function (t) {
-    t.plan(3);
+    t.plan(4);
     t.equal(camelize('player_id'), 'playerId');
     t.equal(camelize('PlayerID'), 'playerId');
     t.equal(camelize('SomeXML'), 'someXml');
+    t.equal(camelize('ID'), 'id');
 });
 
 test('date', function (t) {
