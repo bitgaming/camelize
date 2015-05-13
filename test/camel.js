@@ -22,8 +22,10 @@ test('camelize a nested object', function (t) {
 });
 
 test('string', function (t) {
-    t.plan(1);
-    t.equal(camelize('one_two'), 'oneTwo');
+    t.plan(3);
+    t.equal(camelize('player_id'), 'playerId');
+    t.equal(camelize('PlayerID'), 'playerId');
+    t.equal(camelize('SomeXML'), 'someXml');
 });
 
 test('date', function (t) {
