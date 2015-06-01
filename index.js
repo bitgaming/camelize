@@ -16,12 +16,12 @@ function walk (obj) {
 
 function camelCase(str) {
 
-    str = str.replace(/[_.-](\w|$)/g, function (_, x) {
-        return x.toUpperCase();
+    str = str.replace(/[_.-](\w|$)/g, function (_, m1) {
+        return m1.toUpperCase();
     });
 
-    str = str.replace(/([A-Z])([A-Z]+)/g, function (_, s, x) {
-        return s + x.toLowerCase();
+    str = str.replace(/([A-Z])([A-Z]+)($|[A-Z][a-z])/g, function (_, m1, m2, m3) {
+        return m1 + m2.toLowerCase() + m3;
     });
 
     str = str.charAt(0).toLowerCase() + str.slice(1);
