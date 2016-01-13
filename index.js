@@ -1,12 +1,14 @@
+var isPlainObject = require('is-plain-object');
+
 module.exports = function(obj) {
     if (typeof obj === 'string') return camelCase(obj);
     return walk(obj);
 };
 
 function walk (obj) {
-    if (!obj || typeof obj !== 'object') return obj;
     if (isDate(obj) || isRegex(obj)) return obj;
     if (isArray(obj)) return map(obj, walk);
+    if (!isPlainObject(obj)) return obj;
     return reduce(objectKeys(obj), function (acc, key) {
         var camel = camelCase(key);
         acc[camel] = walk(obj[key]);

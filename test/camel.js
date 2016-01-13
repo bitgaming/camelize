@@ -44,6 +44,21 @@ test('regex', function (t) {
     t.equal(camelize(r), r);
 });
 
+test('object-like objects', function (t) {
+    t.plan(1);
+
+    function Thing() {
+        this.some_prop = true
+    }
+    Thing.prototype.still_a_thing = true
+
+    var o = {
+        object_key: new Thing()
+    }
+
+    t.equal(camelize(o).objectKey.still_a_thing, true); 
+});
+
 test('only camelize strings that are the root value', function (t) {
     t.plan(2);
     t.equal(camelize('foo-bar'), 'fooBar');
