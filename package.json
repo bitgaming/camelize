@@ -1,6 +1,6 @@
 {
   "name": "camelize",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Recursively transform JSON object-keys to camelCase",
   "main": "camelize.js",
   "devDependencies": {

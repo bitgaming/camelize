@@ -1,5 +1,5 @@
 var isPlainObject = require('is-plain-object');
-var magicRegex = /(^_)?([A-Z][a-z0-9]+|([A-Z]+?)(?=[A-Z][a-z0-9]+)|[a-z0-9]+|[A-Z0-9]+)/g;
+var magicRegex = /(^_)?([A-Z][a-z0-9]+|([A-Z]+?)(?=[A-Z][a-z0-9]+)|[a-z0-9]+|[A-Z0-9]+)/gm;
 
 module.exports = function(obj) {
     if (typeof obj === 'string') return camelCase(obj);
