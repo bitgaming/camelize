@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ash14/camelize.git"
+    "url": "git+https://github.com/bitgaming/camelize.git"
   },
   "license": "ISC",
   "dependencies": {
